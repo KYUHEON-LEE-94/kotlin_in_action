@@ -1,5 +1,7 @@
 package pack2
 
+import java.util.TreeMap
+
 /**
  *packageName    :
  * fileName       : pack2.Test1
@@ -34,9 +36,31 @@ class Test1 {
             setOf(Color.ORANGE, Color.RED) -> Color.RED
             else -> throw Exception("No color")
         }
+
+    fun recognize(c:Char) = when(c){
+        in '0'..'9' -> "It's digit!"
+        in 'a' .. 'z', in 'A' .. 'Z' -> "It;s a letter"
+        else -> "i don't know"
+    }
 }
 
 fun main() {
     val languages = arrayListOf("Java") //불변이어도
     languages.add("Kotlin") //객체값 변경 가능
+
+    //iter
+//    for (i in 100 downTo 1 step 2){
+//        print("i는? $i")
+//    }
+
+    //Map iter
+    val binaryReps = TreeMap<Char,String>()
+    for (c in 'A'..'F'){
+        val binary = Integer.toBinaryString(c.code)
+        binaryReps[c] = binary
+    }
+
+    for ((letter, binary) in binaryReps){
+        println("$letter = $binary")
+    }
 }
