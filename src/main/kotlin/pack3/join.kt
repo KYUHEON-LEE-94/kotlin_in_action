@@ -46,3 +46,20 @@ fun <T> joinToString2(
 }
 
 fun String.lastChar():Char = get(length-1) // 수신 객체 멤버에 this 없이 접근
+
+
+fun <T> Collection<T>.joinToString3(
+    separator: String = "," ,
+    prefix: String = "",
+    postfix: String = ""
+): String{
+    val result = StringBuilder(prefix)
+    //this는 수신 객체. 여기서는 T 타입의 원소로 이뤄진 컬렉션
+    for ((index, element) in this.withIndex()){
+        if (index > 0) result.append(separator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+    return result.toString()
+}
