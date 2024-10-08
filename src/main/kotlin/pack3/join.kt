@@ -1,3 +1,4 @@
+@file:JvmName("StringFunctions") // 클래스 이름 지정 어노테이션 p113
 package pack3
 
 /**
@@ -43,3 +44,5 @@ fun <T> joinToString2(
     result.append(postfix)
     return result.toString()
 }
+
+fun String.lastChar():Char = get(length-1) // 수신 객체 멤버에 this 없이 접근
