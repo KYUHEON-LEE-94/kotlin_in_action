@@ -14,6 +14,8 @@ import java.util.TreeMap
  * 2024-10-06        LEE KYUHEON       최초 생성
  */
 class Test1 {
+
+
     //식이 본문인 함수
     fun max(a:Int, b:Int):Int = if(a>b) a else b
     //본문 타입 생략 -> 타입 추론
@@ -48,6 +50,9 @@ fun main() {
     val languages = arrayListOf("Java") //불변이어도
     languages.add("Kotlin") //객체값 변경 가능
 
+    val person = Person("Bob", false)
+    val isMarried = if(person.isMarried) "married" else "not married"
+    println("${person.name} is $isMarried")
     //iter
 //    for (i in 100 downTo 1 step 2){
 //        print("i는? $i")
