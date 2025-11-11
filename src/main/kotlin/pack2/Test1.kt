@@ -47,6 +47,8 @@ fun main() {
 //        print("i는? $i")
 //    }
 
+    println("${Color.BLUE} ${getWarmth(Color.BLUE)} ")
+
     //Map iter
     val binaryReps = TreeMap<Char,String>()
     for (c in 'A'..'F'){
